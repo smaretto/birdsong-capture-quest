@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Bird, Library, Home } from 'lucide-react';
+import { Bird, Library, Home, Map } from 'lucide-react';
 
 const Header: React.FC = () => {
   const location = useLocation();
@@ -37,6 +37,17 @@ const Header: React.FC = () => {
               >
                 <Library className="h-5 w-5" />
                 <span className="sr-only">Collection</span>
+              </Link>
+              
+              <Link
+                to="/overview"
+                className={`flex items-center justify-center rounded-full p-2.5 text-sm font-medium transition-colors 
+                  ${location.pathname === '/overview' 
+                    ? 'bg-nature-100 text-nature-900' 
+                    : 'text-nature-600 hover:bg-nature-100 hover:text-nature-900'}`}
+              >
+                <Map className="h-5 w-5" />
+                <span className="sr-only">Overview</span>
               </Link>
             </nav>
           </div>
